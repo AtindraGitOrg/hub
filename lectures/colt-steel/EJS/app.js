@@ -20,12 +20,12 @@ app.set('view engine', 'ejs');
 
 app.get('/',function(req,res){
     //res.setHeader('Contant-Type','text/html')
-    res.render('imp',{userName:'',adult:''});
+    res.render('imp',{ userName :'', adult :'' });
     
 });
 
 app.get('/:name/:permission',function(req,res){
-    res.render('imp',{userName:req.params.name,adult:req.params.permission})
+    res.render('imp.js',{ userName : req.params.name, adult : req.params.permission })
     });
 
 
