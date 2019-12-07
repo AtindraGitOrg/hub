@@ -68,5 +68,5 @@ function getTeamCallback(req,res){
 
 //port opening
 
-app.listen("8080");
+app.listen("80");
 
