@@ -1,0 +1,1 @@
+callback function is the function which is passed and used from another function.
