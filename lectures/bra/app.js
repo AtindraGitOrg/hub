@@ -1,3 +1,6 @@
+/* jshint -W104 */
+
+
 // // let person = {
 // //     name:"zak",
 // //     age : 20,
@@ -95,7 +98,8 @@ let values={
     reduce :function (c,d){
         return(c(45,65));
     }
-}
+};
+
 
 
 
