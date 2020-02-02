@@ -1,23 +1,24 @@
+//===============================================IMPORT=====================================================
 //import and intialisation of express OBJECT. 
-
 const express = require ("express");
 const app = express();
 
 //import of request
-
 var request = require("request");
 
-// app use static
 
+
+//==============================================USE==&==SET=================================================
+// app use static
 app.use(express.static("public"));
 
 // view set
-
 app.set("view engine", 'EJS');
 
 
 
-// //route home
+//==========================ROUTES======================ROUTE===================================================
+//route 1- home
 
 app.get("/",getCallback);
 
@@ -26,18 +27,16 @@ app.get("/",getCallback);
 function getCallback(req,res){
 
  res.render("indexForm.ejs")
-            
-     
-
+    
       };
 
     
 
 
 
-//route form
+//route 2- FORM
 
-app.get("/team1",getTeamCallback);
+app.get("/tomb",getTeamCallback);
 
 // callback for get home
 
@@ -52,10 +51,12 @@ function getTeamCallback(req,res){
 
         
         let resObj = JSON.parse(body);
+        console.log(resObj[0]);
 
         resObj.forEach(element => {
 
-            if(element.t1 == req.query.team1)
+            let team1,team2;    
+            if(element.t1 === req.query.team1)
                 res.render('index', {team1:req.query.team1 ,team2 : element.t2});
             
             
@@ -66,7 +67,22 @@ function getTeamCallback(req,res){
     
 }
 
+
+// Route-3 TTT
+
+    app.get('/ttt',ticTacToe);
+
+    function ticTacToe(req,res){
+
+        res.render("tic_tac_toe.ejs");
+
+    }
+
+
+
+
+
 //port opening
 
-app.listen("80");
+app.listen("8080");
 

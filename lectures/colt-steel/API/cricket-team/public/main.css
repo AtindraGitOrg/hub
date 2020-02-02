@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+
+
+h1{ 
+    color: cadetblue;
+    font: sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+table {
+
+        margin: auto;
+        text-align: center; 
+        border-collapse: collapse;
+}
+
+
+.row1 {
+    
+    border-bottom: rgb(127, 131, 130) thick solid;
+}
+
+
+.row3{
+    border-top :  rgb(127, 131, 130) thick solid ;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    
+}
+
+.col1{
+    border-right :  rgb(127, 131, 130) thick solid ;
+}
+
+.col3{
+    border-left:  rgb(127, 131, 130) thick solid;
+}
+

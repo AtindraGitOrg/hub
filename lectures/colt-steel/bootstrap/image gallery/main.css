@@ -1,0 +1,14 @@
+
+    body {
+    background: black;
+    }
+
+    .jumbotron {
+        margin-top: 40px ;
+    }
+
+    @media screen and (max-width : 700px)
+    {
+        body {background: red;
+        }
+    }
