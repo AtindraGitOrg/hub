@@ -1,3 +1,7 @@
+
+/* jshint -W104  */
+/* jshint -W119 */
+
 //===============================================IMPORT=====================================================
 //import and intialisation of express OBJECT. 
 const express = require ("express");
@@ -26,9 +30,9 @@ app.get("/",getCallback);
 
 function getCallback(req,res){
 
- res.render("indexForm.ejs")
+ res.render("indexForm.ejs");
     
-      };
+      }
 
     
 
@@ -49,13 +53,28 @@ function getTeamCallback(req,res){
         // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         // console.log('body:', JSON.parse(body)); // Print the HTML for the Google homepage.
 
+
+//=================================================================================================
+ //===================================logic=====================================================
+ //================================================================================================
+ 
+ 
+
+        let resObjs = JSON.parse(body);
+        let resObj = resObjs[0];
+        console.log(resObj);
+        console.log(Array.isArray(resObjs));
+        let key = "id";
+        console.log(resObj[key]);
+
+        console.log(key in resObj);
         
-        let resObj = JSON.parse(body);
-        console.log(resObj[0]);
+        
+        
 
-        resObj.forEach(element => {
+        resObjs.forEach(element => {
 
-            let team1,team2;    
+                
             if(element.t1 === req.query.team1)
                 res.render('index', {team1:req.query.team1 ,team2 : element.t2});
             
@@ -66,6 +85,17 @@ function getTeamCallback(req,res){
 
     
 }
+
+
+
+
+//==============================================================================================
+//============================================================================================================
+//==============================================================================================
+//============================================================================================================
+//==============================================================================================
+
+
 
 
 // Route-3 TTT
